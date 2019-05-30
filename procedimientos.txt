@@ -1,0 +1,18 @@
+delimiter //
+create procedure TotalUser(IN user varchar(50))
+begin
+select @cost := sum(costo) from compras where correo_user=user;
+select apellidos, nombre from usuarios where correo = user;
+end //
+delimiter ; 
+
+
+delimiter //
+create procedure TotalEmple(IN emple varchar(50))
+begin
+select @costemple := sum(costo)as total from compras where id_empleado=emple;
+end //
+delimiter ; 
+
+
+
